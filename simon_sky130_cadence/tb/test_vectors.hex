@@ -1,0 +1,23 @@
+# ==============================================================================
+# File: test_vectors.hex
+# Description: Official NSA Known-Answer Test (KAT) Vectors for SIMON
+# Format: Mode(0=32/64, 1=64/128), Enc/Dec(0=Enc, 1=Dec), Key, Plaintext/Ciphertext, Expected
+# ==============================================================================
+
+# Vector 1: SIMON32/64 Encryption
+# Key: 1918 1110 0908 0100 (64-bit)
+# PT:  6565 6877 (32-bit: L=6565, R=6877)
+# CT:  c69b e9bb (32-bit: L=c69b, R=e9bb)
+0 0 1918111009080100 65656877 c69be9bb
+
+# Vector 2: SIMON32/64 Decryption
+0 1 1918111009080100 c69be9bb 65656877
+
+# Vector 3: SIMON64/128 Encryption
+# Key: 1b1a1918 13121110 0b0a0908 03020100 (128-bit)
+# PT:  656b696c 20646e75 (64-bit: L=656b696c, R=20646e75)
+# CT:  44c8fc20 b9dfa07a (64-bit: L=44c8fc20, R=b9dfa07a)
+1 0 1b1a1918131211100b0a090803020100 656b696c20646e75 44c8fc20b9dfa07a
+
+# Vector 4: SIMON64/128 Decryption
+1 1 1b1a1918131211100b0a090803020100 44c8fc20b9dfa07a 656b696c20646e75
